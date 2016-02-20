@@ -1,0 +1,153 @@
+Numeric Palindrome Search Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  (C) 2002, HardCore Software
+
+  This program is protected by the GNU General Public License.
+  See the file "COPYING" for details.
+
+  Thanks to defrost for the malloc() tip, and a number of optimizations.
+  Defrost has provided advice upon and contributed optimizations to almost
+  every aspect of this code.
+
+
+
+What is a Numeric Palindrome
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A numeric palindrome is similar to an alphabetic palindrome: It reads the
+same both forwards and backwards, for example "A MAN, A PLAN, A CANAL PANAMA",
+and "12345654321".
+
+Most numbers have the property that if added with a number comprised of it's
+own digits but reversed, they will form a numeric palindrome, or if not
+immediatley, will become palindromes after iterating this sequence a number
+of times.
+
+Example:
+
+100 + 001 = 101
+
+743 + 347 = 1090
+1090 + 0901 = 1991
+
+
+Certain numbers, most famously 196, don't seem to form palindromes no matter
+how many time this process is iterated. It is unknown whether eventually
+they will form palindromes or not, however people have continued this on for
+many million of iterations - with no end in sight.
+
+This program was started after I was inspiried by a slashdot article. I'm
+not particularly interested in this problem, but it seemed like it would
+be a fun programming project, so here it is.
+
+
+
+Why Use This Program
+~~~~~~~~~~~~~~~~~~~~
+
+NPSP is quite full featured, and it's features rival, if not surpass
+any of it's competitors.
+
+-Itsvan Standard Formatting for both saving and loading.
+-Size of computed number is only limited by your memory (and spare time, of
+ course).
+-Autosaving customizable to the second.
+-Fairly optimized, thanks to defrost.
+-Save on exit.
+-User specified base of 2-16 (defrost's alternate implementation supports
+ 2-36).
+-Cross platform.
+-Active memory usage reports.
+-Active Iterations per second reports.
+-Free Software (www.fsf.org)!
+-No bullshit GUI. :)
+
+
+
+How Do I Use This Program?
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+NPSP runs on unix and windows. Windows users have been supplied a precompiled
+binary. You'll find it in windows/npsp.exe. Make sure cygwin1.dll is in
+the current directory or in your windows directory.
+
+Compiling from source:
+
+Open up cygwin or fire up a unix console, unpack the archive, switch
+to the root of the tree, and type:
+
+make npsp
+
+or
+
+make dnpsp
+
+npsp is Fractal's original version with some of defrost's optimizations.
+It also has more features in it's statuc report, along with save on exit.
+dnpsp is defrost's optimized version, and while not as feature full, is
+probably somewhat faster.
+
+Now you can run
+
+./npsp     (from unix or cygwin)
+npsp       (from a DOS prompt)
+
+It will show you this:
+
+Numeric Palindrome Search Program (NPSP) V1.0
+(C) 2002, HardCore SoftWare
+
+usage: npsp <options>
+
+            -i <input file (Istvan Standard Format)>
+            -o <output file (Istvan Standard Format)>
+            -n <seed number>
+            -m <maximum # of digits to find>
+            -b <numeric base>
+            -a <seconds between autosaves>
+
+
+I think it's fairly self-explanitory, so I'll just give you some examples:
+
+Compute 196 to 9000 decimal places, and save it in "myfile.ist".
+./npsp -n 196 -m 9000 -o myfile.ist
+
+Compute a binary lychell number to a million digits, and print the result out.
+./npsp -b 2 -n 101001 -m 1000000
+
+Compute an additional thousand digits to your previously saved myfile.ist
+(see the first example) and save it back into myfile.ist.
+./npsp -i myfile.ist -m 10000 -o myfile.ist
+
+
+
+Notes
+~~~~~
+
+Note: When loading files, the -m argument specifies the number of digits
+to go to, NOT how many more to calculate.
+
+Note: Istvan standard format doesn't save base, so be sure to specify
+the same -b as the one you used to save the file, otherwise you will
+almost certainly get fucked up results. (This should be fixed in Extended
+Istvan Format if it ever comes out).
+
+Windows users: Make sure cygwin1.dll is in your current directory, or in
+your windows directory.
+
+Windows users: Use this from a DOS prompt. I don't want to say this again.
+
+
+
+Credits
+~~~~~~~
+This program is copyright 2002 by:
+
+HardCore SoftWare and defrost,
+
+The authors can be reached on irc.freenode.net (irc.openprojects.net)
+on channel #c as Fractal and defrost.
+
+This program is protected by the GNU General Public License.
+See the file "COPYING" for details.

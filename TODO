@@ -1,0 +1,12 @@
+-Extend Istvan Standard Format:
+  -Support variable bases
+  -Remove the Autosave line
+  -Put in a decent standard header
+
+-Make sure -n supports ALL bases.
+
+-Merge Various Optimizations from defrost
+
+-Use a-z for supporting bases 2-36, rather than 2-16 as defrost's code does.
+
+-Be able to specify multiple numbers on the command line... Maybe...
